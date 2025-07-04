@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 const AddCourse = () => {
-  const { backendUrl, getToken } = useContext(AppContext);
+  const { backendURL, getToken } = useContext(AppContext);
 
   const quillRef = useRef(null);
   const editorRef = useRef(null);
@@ -149,7 +149,7 @@ const AddCourse = () => {
 
       const token = await getToken();
       const { data } = await axios.post(
-        backendUrl + "/api/educator/add-course",
+        backendURL + "/api/educator/add-course",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
